@@ -1,0 +1,346 @@
+{
+  "policyMetadata": {
+    "author": "LAB\\Administrator",
+    "timeCreated": "2026-11-02 04:49:29Z",
+    "azureADConnectVersion": "2.6.92.0",
+    "policySchemaVersion": "1.0.0.0"
+  },
+  "deploymentMetadata": {
+    "hostName": "SRV01.ad.homelab.pl",
+    "serviceAccount": "NT SERVICE\\ADSync",
+    "serviceAccountType": "VirtualServiceAccount",
+    "databaseType": "SqlExpress"
+  },
+  "authenticationPolicy": [
+    "PasswordHashSynchronization"
+  ],
+  "selfServicePasswordReset": true,
+  "identityMappingPolicy": {
+    "azureSourceAnchorAttribute": "mS-DS-ConsistencyGuid",
+    "userPrincipalNameAttribute": "userPrincipalName",
+    "userMatchingPolicy": "AlwaysProvision"
+  },
+  "azureDirectoryPolicy": {
+    "administrator": "KamilChaber@chaberkamil.onmicrosoft.com",
+    "tenantId": "7eef3d78-65e7-41b9-9e87-f1248b2babfa",
+    "exportDeletionLimit": "500",
+    "standardSynchronizationRules": [
+      {
+        "Name": "In from AAD - User Join",
+        "uniqueIdentifier": "37586189-c1f7-4396-b73c-f64f1bd91241",
+        "immutableTag": "Microsoft.InfromAADUserJoin.005",
+        "precedence": 111
+      },
+      {
+        "Name": "In from AAD - Contact Join",
+        "uniqueIdentifier": "ac38ad4d-1a60-4500-959d-befedbc202b2",
+        "immutableTag": "Microsoft.InfromAADContactJoin.004",
+        "precedence": 112
+      },
+      {
+        "Name": "In from AAD - Group Join",
+        "uniqueIdentifier": "8e7bc5fb-2631-43f6-9961-47b5f6a272a5",
+        "immutableTag": "Microsoft.InfromAADGroupJoin.004",
+        "precedence": 113
+      },
+      {
+        "Name": "In from AAD - User NGCKey",
+        "uniqueIdentifier": "c631a5d4-4ff7-4652-a22e-230afec76c04",
+        "immutableTag": "Microsoft.InfromAADUserNGCKey.001",
+        "precedence": 114
+      },
+      {
+        "Name": "Out to AAD - User Join",
+        "uniqueIdentifier": "83f90597-1b3d-4f5f-8e2f-90b721d0b7ad",
+        "immutableTag": "Microsoft.OuttoAADUserJoin.014",
+        "precedence": 115
+      },
+      {
+        "Name": "Out to AAD - User Identity",
+        "uniqueIdentifier": "6171fa30-842c-4712-a4e9-80413c58c8b4",
+        "immutableTag": "Microsoft.OuttoAADUserIdentity.006",
+        "precedence": 116
+      },
+      {
+        "Name": "Out to AAD - User ExchangeOnline",
+        "uniqueIdentifier": "b4465d1c-b674-44dd-b6d7-8ac830a4454e",
+        "immutableTag": "Microsoft.OuttoAADUserExchangeOnline.008",
+        "precedence": 117
+      },
+      {
+        "Name": "Out to AAD - User DynamicsCRM",
+        "uniqueIdentifier": "93a8e97c-ec47-4570-bfcb-aa20b119c0b5",
+        "immutableTag": "Microsoft.OuttoAADUserDynamicsCRM.004",
+        "precedence": 118
+      },
+      {
+        "Name": "Out to AAD - User Intune",
+        "uniqueIdentifier": "57747f9d-0693-4cf4-845f-0ae641c64964",
+        "immutableTag": "Microsoft.OuttoAADUserIntune.004",
+        "precedence": 119
+      },
+      {
+        "Name": "Out to AAD - User LyncOnline",
+        "uniqueIdentifier": "b1efea60-c71d-4061-a5a6-abd64809e5bb",
+        "immutableTag": "Microsoft.OuttoAADUserLyncOnline.004",
+        "precedence": 120
+      },
+      {
+        "Name": "Out to AAD - User SharePointOnline",
+        "uniqueIdentifier": "0687da30-5eee-4c5c-884b-a798b34485a2",
+        "immutableTag": "Microsoft.OuttoAADUserSharePointOnline.004",
+        "precedence": 121
+      },
+      {
+        "Name": "Out to AAD - User AzureRMS",
+        "uniqueIdentifier": "c37d1989-8c08-4324-86f5-1125dbdcaac2",
+        "immutableTag": "Microsoft.OuttoAADUserAzureRMS.004",
+        "precedence": 122
+      },
+      {
+        "Name": "Out to AAD - Contact Join",
+        "uniqueIdentifier": "b2be2786-c389-46c7-8fc6-282115276995",
+        "immutableTag": "Microsoft.OuttoAADContactJoin.004",
+        "precedence": 123
+      },
+      {
+        "Name": "Out to AAD - Contact Identity",
+        "uniqueIdentifier": "fb58459d-854f-4ee7-924d-f0c8ce8acab2",
+        "immutableTag": "Microsoft.OuttoAADContactIdentity.003",
+        "precedence": 124
+      },
+      {
+        "Name": "Out to AAD - Contact ExchangeOnline",
+        "uniqueIdentifier": "d7ebbd6d-a123-4ce2-a49e-9bc0998bd7d7",
+        "immutableTag": "Microsoft.OuttoAADContactExchangeOnline.006",
+        "precedence": 125
+      },
+      {
+        "Name": "Out to AAD - Contact DynamicsCRM",
+        "uniqueIdentifier": "56ff4af4-429b-4021-8f17-80c09bf6737b",
+        "immutableTag": "Microsoft.OuttoAADContactDynamicsCRM.004",
+        "precedence": 126
+      },
+      {
+        "Name": "Out to AAD - Contact Intune",
+        "uniqueIdentifier": "fe4e5fba-8715-4f83-ad4b-d415f472a261",
+        "immutableTag": "Microsoft.OuttoAADContactIntune.003",
+        "precedence": 127
+      },
+      {
+        "Name": "Out to AAD - Contact LyncOnline",
+        "uniqueIdentifier": "c49cf828-dd18-418c-8db5-fa23f91008aa",
+        "immutableTag": "Microsoft.OuttoAADContactLyncOnline.006",
+        "precedence": 128
+      },
+      {
+        "Name": "Out to AAD - Contact SharePointOnline",
+        "uniqueIdentifier": "c76c16f4-7a55-4738-bdd7-e88c1bb7ad0b",
+        "immutableTag": "Microsoft.OuttoAADContactSharePointOnline.003",
+        "precedence": 129
+      },
+      {
+        "Name": "Out to AAD - Contact AzureRMS",
+        "uniqueIdentifier": "85578821-6b97-4cf3-8552-457f5e196c65",
+        "immutableTag": "Microsoft.OuttoAADContactAzureRMS.003",
+        "precedence": 130
+      },
+      {
+        "Name": "Out to AAD - Group Join",
+        "uniqueIdentifier": "92b2fba3-d450-41de-ad16-0d2db6fc10fb",
+        "immutableTag": "Microsoft.OuttoAADGroupJoin.010",
+        "precedence": 131
+      },
+      {
+        "Name": "Out to AAD - Group Writeup Member Limit",
+        "uniqueIdentifier": "3e32725d-ad51-441c-9bf3-d448b7ee08fc",
+        "immutableTag": "Microsoft.OuttoAADGroupWriteupMemberLimit.003",
+        "precedence": 132
+      },
+      {
+        "Name": "Out to AAD - Group Identity",
+        "uniqueIdentifier": "3e45e418-4504-4df0-b6e8-6b811f813c81",
+        "immutableTag": "Microsoft.OuttoAADGroupIdentity.005",
+        "precedence": 133
+      },
+      {
+        "Name": "Out to AAD - Group ExchangeOnline",
+        "uniqueIdentifier": "0866d219-6650-4a54-bfa2-5fbfb91484cf",
+        "immutableTag": "Microsoft.OuttoAADGroupExchangeOnline.006",
+        "precedence": 134
+      },
+      {
+        "Name": "Out to AAD - Group DynamicsCRM",
+        "uniqueIdentifier": "eb4d303b-147a-47f2-92ba-a170900b2adf",
+        "immutableTag": "Microsoft.OuttoAADGroupDynamicsCRM.004",
+        "precedence": 135
+      },
+      {
+        "Name": "Out to AAD - Group Intune",
+        "uniqueIdentifier": "151982c9-3f3e-4a03-b562-8c83e8d4a281",
+        "immutableTag": "Microsoft.OuttoAADGroupIntune.004",
+        "precedence": 136
+      },
+      {
+        "Name": "Out to AAD - Group LyncOnline",
+        "uniqueIdentifier": "5b39c221-89fe-494b-86b8-456ea9d86d57",
+        "immutableTag": "Microsoft.OuttoAADGroupLyncOnline.004",
+        "precedence": 137
+      },
+      {
+        "Name": "Out to AAD - Group SharePointOnline",
+        "uniqueIdentifier": "8098f368-8a82-40de-a62b-5e4c350cf9cb",
+        "immutableTag": "Microsoft.OuttoAADGroupSharePointOnline.004",
+        "precedence": 138
+      },
+      {
+        "Name": "Out to AAD - Group AzureRMS",
+        "uniqueIdentifier": "9d556951-f2ae-4971-b188-02ba99518cc2",
+        "immutableTag": "Microsoft.OuttoAADGroupAzureRMS.004",
+        "precedence": 139
+      },
+      {
+        "Name": "Out to AAD - User OfficeProPlus",
+        "uniqueIdentifier": "fcb99141-a4a6-4f34-8b4e-bf9653b2e53d",
+        "immutableTag": "Microsoft.OuttoAADUserOfficeProPlus.004",
+        "precedence": 140
+      },
+      {
+        "Name": "In from AAD - Device Common",
+        "uniqueIdentifier": "a387525a-8180-4f43-9f20-1dd89c0065a7",
+        "immutableTag": "Microsoft.InfromAADDeviceCommon.004",
+        "precedence": 142
+      },
+      {
+        "Name": "Out to AAD - Device Join SOAInAD",
+        "uniqueIdentifier": "69d0bd4e-2775-4e78-b1df-9a1960b274d8",
+        "immutableTag": "Microsoft.OuttoAADJoinSOAInAD.008",
+        "precedence": 144
+      }
+    ]
+  },
+  "onpremisesDirectoryPolicy": [
+    {
+      "friendlyName": "ad.homelab.pl",
+      "uniqueIdentifier": "33fe7e83-39f2-48d5-a30d-f07fdcb5517f",
+      "fullyQualifiedDomainName": "ad.homelab.pl",
+      "onPremisesDirectoryAccount": "AD.HOMELAB.PL\\MSOL_5c7ab1faffab",
+      "partitionFilters": [
+        {
+          "fullyQualifiedDomainName": "ad.homelab.pl",
+          "distinguishedName": "DC=ad,DC=homelab,DC=pl",
+          "containerInclusions": [
+            "DC=ad,DC=homelab,DC=pl"
+          ],
+          "containerExclusions": [
+            "CN=LostAndFound,DC=ad,DC=homelab,DC=pl"
+          ]
+        }
+      ],
+      "standardSynchronizationRules": [
+        {
+          "Name": "In from AD - User Join",
+          "uniqueIdentifier": "d510b435-35ea-46f4-bcce-a8d756fedca1",
+          "immutableTag": "Microsoft.InfromADUserJoin.006",
+          "precedence": 100
+        },
+        {
+          "Name": "In from AD - InetOrgPerson Join",
+          "uniqueIdentifier": "e367f515-37d8-4a71-b8ce-5be73eab8a35",
+          "immutableTag": "Microsoft.InfromADInetOrgPersonJoin.004",
+          "precedence": 101
+        },
+        {
+          "Name": "In from AD - User AccountEnabled",
+          "uniqueIdentifier": "850c7e05-a750-4af2-be53-46d3a2f0757a",
+          "immutableTag": "Microsoft.InfromADUserAccountEnabled.009",
+          "precedence": 102
+        },
+        {
+          "Name": "In from AD - InetOrgPerson AccountEnabled",
+          "uniqueIdentifier": "8fe48fbc-2c0a-4ed3-abf3-636063f0e3ed",
+          "immutableTag": "Microsoft.InfromADInetOrgPersonAccountEnabled.006",
+          "precedence": 103
+        },
+        {
+          "Name": "In from AD - User Common",
+          "uniqueIdentifier": "8565ac13-f96c-4846-8504-987519d2d55f",
+          "immutableTag": "Microsoft.InfromADUserCommon.011",
+          "precedence": 104
+        },
+        {
+          "Name": "In from AD - InetOrgPerson Common",
+          "uniqueIdentifier": "c0292520-5205-40fe-80ca-f94445f0485a",
+          "immutableTag": "Microsoft.InfromADInetOrgPersonCommon.008",
+          "precedence": 105
+        },
+        {
+          "Name": "In from AD - Group Join",
+          "uniqueIdentifier": "0b5766e0-65e6-4cd9-ad63-5692ceaf2151",
+          "immutableTag": "Microsoft.InfromADGroupJoin.006",
+          "precedence": 106
+        },
+        {
+          "Name": "In from AD - Group Common",
+          "uniqueIdentifier": "8000ceb2-9ee3-452e-9b9c-9b9c017fb34f",
+          "immutableTag": "Microsoft.InfromADGroupCommon.009",
+          "precedence": 107
+        },
+        {
+          "Name": "In from AD - Contact Join",
+          "uniqueIdentifier": "39c21296-7558-430a-9090-dd41542ed36d",
+          "immutableTag": "Microsoft.InfromADContactJoin.004",
+          "precedence": 108
+        },
+        {
+          "Name": "In from AD - Contact Common",
+          "uniqueIdentifier": "96b5d2a4-2005-4df8-8d89-9e4cf6ee4ac8",
+          "immutableTag": "Microsoft.InfromADContactCommon.007",
+          "precedence": 109
+        },
+        {
+          "Name": "In from AD - ForeignSecurityPrincipal Join User",
+          "uniqueIdentifier": "91592010-9a41-4f87-a92f-9fc9c3ac0af7",
+          "immutableTag": "Microsoft.InfromADForeignSecurityPrincipalJoinUser.001",
+          "precedence": 110
+        },
+        {
+          "Name": "Out to AD - User Join SOAInAD",
+          "uniqueIdentifier": "4b2b3e53-da09-4dce-9040-b5e6319457e6",
+          "immutableTag": "Microsoft.OuttoADUserJoinSOAInAD.004",
+          "precedence": 141
+        },
+        {
+          "Name": "In from AD - Computer Join",
+          "uniqueIdentifier": "04f5c36a-36e8-469b-bb21-c68a9ec6e749",
+          "immutableTag": "Microsoft.InfromADComputerJoin.006",
+          "precedence": 143
+        },
+        {
+          "Name": "In from AD - Device Common",
+          "uniqueIdentifier": "b4c4d67d-6590-4044-b386-1864650f8eda",
+          "immutableTag": "Microsoft.InfromADDeviceCommon.002",
+          "precedence": 145
+        },
+        {
+          "Name": "Out to AD - User NGCKey",
+          "uniqueIdentifier": "464c341f-8ffb-45ae-b908-afd06e6a644e",
+          "immutableTag": "Microsoft.OuttoADUserNGCKey.001",
+          "precedence": 146
+        },
+        {
+          "Name": "Out to AD - Device STKKey",
+          "uniqueIdentifier": "c15ecdf0-221d-44a6-b014-67e9b27ef623",
+          "immutableTag": "Microsoft.OuttoADDeviceSTKKey.001",
+          "precedence": 147
+        },
+        {
+          "Name": "Out to AD - User ImmutableId",
+          "uniqueIdentifier": "783c32ee-0c02-4d94-9009-fa32ba09899a",
+          "immutableTag": "Microsoft.OuttoADUserImmutableId.003",
+          "precedence": 148
+        }
+      ]
+    }
+  ]
+}

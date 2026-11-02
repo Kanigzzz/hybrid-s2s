@@ -1,0 +1,1 @@
+1. Architektura Hub and spoke mimo ze moglismy uzyc zwyklej plaskiej

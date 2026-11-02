@@ -1,0 +1,7 @@
+.DS_Store
+.obsidian/
+# Terraform: stan i zmienne zawierają sekrety
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
