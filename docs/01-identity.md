@@ -133,9 +133,14 @@ Jan Test 11/2/2026 6:20:29 AM
 
 ### Problem 2: *`error_missing_device` przy rejestracji urządzenia*
 - **Objaw:** `dsregcmd /status` pokazuje `AzureAdJoined : NO`, a w *Diagnostic Data*: `Registration Type: fallback_sync`, `Server ErrorSubCode: error_missing_device`, *device object … is not found*. W Entra urządzenie ma stan *Pending*.
-- **Przyczyna:**
-- **Rozwiązanie:**
-- **Wniosek:**
+- **Przyczyna:** w środowisku hybrydowym typu sync join: komputer zapisuje certyfikat w loklanym kontrolerze domeny, Entra Connect eksportuje obiekt do chmury, a dopiero potem komputer kończy rejestrację w domenie. Opisany problem wynikał z tego że komputer chciał dokończyć rejestrację przed synchronizacja Entra Connect (cykl delta domyślnie co 30 min). Jest to stan przejściowy
+- **Rozwiązanie:** wymuszenie synchronizacji na serwerze Entra Connect za pomocą komnedy powershell i restart komputera, co wymusiło ponowna próbe rejestracji po synchronizacji serwera
+
+```Powershell
+Start-ADSyncSyncCycle -PolicyType Delta
+```
+
+- **Wniosek:** przy PHS rejestracja urządzenia zależy od cyklu synchronizacji dużej mierze to etap przejściowy
 
 ## Ograniczenia
 

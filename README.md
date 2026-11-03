@@ -14,7 +14,7 @@ flowchart TB
         MAC["<b>Mac / laptop</b><br/>Tailscale"]
         subgraph PVE["Host Proxmox (pve)"]
             VMBR0["<b>vmbr0</b><br/>bridge z portem fizycznym"]
-            FW01["<b>FW01 · pfSense</b><br/>WAN 192.168.1.85<br/>LAN 10.10.10.1<br/>NAT · firewall · DHCP · DNS"]
+            FW01["<b>FW01 · pfSense</b><br/>WAN 192.168.1.158<br/>LAN 10.10.10.1<br/>NAT · firewall · DHCP · DNS"]
             subgraph LAB["Sieć labu · 10.10.10.0/24 · vmbr1 (bez portu fizycznego)"]
                 TS["<b>ts-router</b> (LXC)<br/>10.10.10.5<br/>Tailscale subnet router"]
                 DC01["<b>DC01</b><br/>10.10.10.10<br/>AD DS + DNS<br/>ad.homelab.pl"]
@@ -81,7 +81,7 @@ flowchart TB
 ### Warstwa wirtualizacji: Host Proxmox
 - Fizyczny serwer z zainstalowanym hypervisorem typu 1 Bare-metal (Proxmox VE), na którym działa wirtualny przełącznik sieciowy (Linux Bridges), maszyny wirtualne (VM) oraz kontenery (LXC)
 	- **vmbr0 (Bridge z portem fizycznym)** - Wirtualny przełącznik (switch) podpięty jest on bezpośrednio do fizycznej karty sieciowej serwera. Każda maszyna bezpośrednio wpięta do **vmbr0** znajduje się w sieci domowej.
-	- **FW01 - pfSense (WAN: 192.168.1.85 | LAN: 10.10.10.1)** - Jest to serce sieciowego labu, pełni rolę routera oraz firewall. Posiada dwie karty sieciowe:
+	- **FW01 - pfSense (WAN: 192.168.1.158 | LAN: 10.10.10.1)** - Jest to serce sieciowego labu, pełni rolę routera oraz firewall. Posiada dwie karty sieciowe:
 		- Interfejs WAN (192.168.1.85 / vmbr0) - Odbiera ruch z sieci domowej (w tym IPsec z Azure)
 		- Interfejs LAN (10.10.10.1 / vmbr1) - Stanowi bramę domyślną dla wszystkich serwerów w labie.
 		- Rola w środowisku - Odpowiada za NAT, Firewall (kontroluje ruch między domem, labem a Azure), serwer DHCP, lokalny serwer DNS oraz końcowy punkt tunelu IPsec IKEv2 który odpowiada za połączenie Site-to-Site z bramą w Azure (S2S VPN).
