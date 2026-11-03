@@ -5,3 +5,6 @@
 *.tfstate.*
 *.tfvars
 .terraform/
+
+# kopie oryginalnych zrzutow (TIFF)
+_tiff-backup/
